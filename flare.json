@@ -1,0 +1,365 @@
+{
+    "name": "theBeats",
+    "children": [{
+        "name": "DMC Agent",
+        "children": [{
+            "name": "Create quotes based on requests",
+            "goodness": 1,
+            "children": [{
+                "name": "Follow up on queries from Travel Agents",
+                "size": 10,
+                "goodness": 1
+            }, {
+                "name": "Respond to queries from Travel Agents",
+                "size": 10,
+                "goodness": 2
+            }, {
+                "name": "Make amendments to quotes being built",
+                "size": 10,
+                "goodness": 0.2
+            }]
+        }, {
+            "name": "Ensure relevant products are offered to Travel Agents",
+            "children": [{
+                "name": "?",
+                "size": 3534,
+                "goodness": 0
+            }]
+        }, {
+            "name": "Support edge case requirements well",
+            "children": [{
+                "name": "Customise quote for case to case basis",
+                "size": 7074
+            }, {
+                "name": "Add on the fly inventory to support out-of-system/ non-contracted products",
+                "size": 7840
+            }]
+        }, {
+            "name": "Work smoothly across multiple organisations",
+            "children": [{
+                "name": "?",
+                "size": 7074
+            }]
+        }, {
+            "name": "Efficiently work with a particular quote",
+            "children": [{
+                "name": "Efficiently locate a particular quote",
+                "size": 7074
+            }, {
+                "name": "Quickly understand the context of a quote, even if I am seeing it after a long time or am not the original creator of it.",
+                "size": 7840
+            }]
+        }]
+    },
+	{
+        "name": "DMC Supervisor",
+        "children": [{
+            "name": "Manage work for DMC Agents",
+            "children": [{
+                "name": "Be informed of DMC Agent workload and status",
+                "size": 11
+            }, {
+                "name": "Assign/ redistribute enqiries for DMC Agents",
+                "size": 10
+            }, {
+                "name": "Approve price change request created by DMC agent",
+                "size": 10
+            }]
+        }, {
+            "name": "Reduce operational cost",
+            "children": [{
+                "name": "Reduce manual error by DMC agents (possibly by having some checks in place)",
+                "size": 10
+            },
+			{
+                "name": "Make DMC Agents more productive",
+                "size": 10
+            }]
+        }, {
+            "name": "Ensure targets are met",
+            "children": [{
+                "name": "Set targets for my agents",
+                "size": 10
+            }, {
+                "name": "Incentivise/ penalise DMC Agents",
+                "size": 10
+            }]
+        }, {
+            "name": "Communicate routine disruptions to relevant stakeholders",
+            "children": [{
+                "name": "Use the announcement system to make selective announcements",
+                "size": 10
+            }]
+        }]
+    },
+	{
+        "name": "DMC Owner",
+        "children": [{
+            "name": "Ensure smooth running of the org",
+            "children": [{
+                "name": "See the overall status of things",
+                "size": 10
+            }]
+        }, {
+            "name": "what is different over and above any business owner",
+            "children": [{
+                "name": "Set targets for my supervisors",
+                "size": 3534
+            }]
+        }, {
+            "name": "Continuous Improvement",
+            "children": [{
+                "name": "Work with allround qualitative and quantitiative feedback to improve business processes",
+                "size": 7074
+            }, {
+                "name": "Feed data for pre beats usage so that benchmarks can be calculated",
+                "size": 7840
+            }]
+        }]
+    },
+	{
+        "name": "DMC Contracting Team",
+        "children": [{
+            "name": "Be on top of current demand",
+            "children": [{
+                "name": "Be able to see when availability is low or when demand will be more",
+                "size": 10
+            }]
+        }, {
+            "name": "Build new relationships",
+            "children": [{
+                "name": "Know sources of relevant rates, then find the best among them",
+                "size": 3534
+            },
+			{
+                "name": "Establish contract with new vendors",
+                "size": 3534
+            },
+			{
+                "name": "Monitor bookings on preferred destinations",
+                "size": 3534
+            }]
+        }, {
+            "name": "Get best rates from suppliers/ vendors to ensure higher margins",
+            "children": [{
+                "name": "Negotiate new / renegotiate exisitng contracts",
+                "size": 7074
+            }]
+        }, {
+            "name": "Make rates & availability accessible to the DMC organisation",
+            "children": [{
+                "name": "Be able to easily and correctly load rates manually or via API",
+                "size": 7074
+            },
+			{
+                "name": "Be able to easily verify rates are correct",
+                "size": 7074
+            },
+			{
+                "name": "Be able to manage contracts or info provided by suppliers",
+                "size": 7074
+            },
+			{
+                "name": "Be able to manage information about deals, contacts, promotions etc",
+                "size": 7074
+            }]
+        }, {
+            "name": "Ensure bookings are honored by contracted vendors",
+            "children": [{
+                "name": "Monitor system for confirmations and cancellations",
+                "size": 7074
+            }]
+        },
+		{
+            "name": "Work with feedback of TAs",
+            "children": [{
+                "name": "Be able to capture rejection reasons from TAs",
+                "size": 7074
+            },
+			{
+                "name": "Be able to see sales trends breakup by TA, product, location, duration etc",
+                "size": 7074
+            }]
+        }]
+    },
+		{
+        "name": "DMC Fulfillment Team",
+        "children": [{
+            "name": "Work without errors across multiple systems",
+            "children": [{
+                "name": "?",
+                "size": 10
+            }]
+        }, {
+            "name": "Configure automation rules",
+            "children": [{
+                "name": "Automated emails are sent to vendors based on contract details",
+                "size": 3534,
+                "goodness": 1
+            },
+			{
+                "name": "Establish contract with new vendors",
+                "size": 3534
+            }]
+        }, {
+            "name": "Make bookings (on various other systems and websites)",
+            "children": [{
+                "name": "Be able to keep track of where all bookings have to be made - urls, access etc",
+                "size": 7074
+            }]
+        }, {
+            "name": "Confirm Bookings",
+            "children": [{
+                "name": "Update status of quotes in the system (list and details view with 2 ticks out of which one is for vendor)",
+                "size": 7074
+            },
+			{
+                "name": "Follow up with vendors for confirmations if needed",
+                "size": 7074
+            }]
+        }, {
+            "name": "Ensure smooth operations",
+            "children": [{
+                "name": "Be able to track payments or credit cycles with the vendors",
+                "size": 7074
+            },
+			{
+                "name": "Ensure timely action on reservations (hence need some way to prioritise work)",
+                "size": 7074
+            },
+			{
+                "name": "Keep track of invoices for reconciliation",
+                "size": 7074
+            }]
+        }]
+    },
+			{
+        "name": "DMC Grounds Team",
+        "children": [{
+            "name": "Provide the best possible experience to travelers in a city",
+            "children": [{
+                "name": "Keep abreast of traveler movement and schedules by looking at the manifest table",
+                "size": 10
+            },
+			{
+                "name": "Receive travelers at the airport",
+                "size": 10
+            },
+			{
+                "name": "Coordinate traveler movement in town with transport and activity providers",
+                "size": 10
+            },
+			{
+                "name": "whatever else it may take to enable the best possible local experience for the traveler",
+                "size": 10
+            }]
+        }]
+    },
+	{
+        "name": "DMC Admin",
+        "children": [{
+            "name": "Set up and maintain the system for my org",
+	    "goodness": 1,
+            "children": [{
+                "name": "Configure system settings to suit my organisations requirements",
+                "size": 10
+            },
+			{
+                "name": "Define cities that my DMC operates in and assign Grounds Team Personnel to each city",
+                "size": 10
+            },
+			{
+                "name": "Take care of monthly payments, extra storage requirements, etc.",
+                "size": 10
+            },
+			{
+                "name": "Process out agents and supervisors who have left",
+                "size": 10
+            },
+			{
+                "name": "Define and refine new product categories as needed",
+                "size": 10
+            }]
+        }]
+    },
+	{
+        "name": "TA Agent",
+        "children": [{
+            "name": "Know my customers",
+            "children": [{
+                "name": "Capture client details, past trips, professional info, family info etc so he can give personalized quotes",
+                "size": 10
+            }]
+        },
+		{
+            "name": "Provide personalised service",
+            "children": [{
+                "name": "Remind clients before the trip to give a personal touch",
+                "size": 10
+            }]
+        },
+		{
+            "name": "Ensure delightful experience across all stages of the trip",
+            "children": [{
+                "name": "Be able to take client feedback post trip or during the trip so his help is noted",
+                "size": 10
+            }]
+        },
+		{
+            "name": "Work with DMCs to get best rates",
+            "children": [{
+                "name": "Choose between quotes from multiple DMCs",
+                "size": 10
+            }]
+        }]
+    },
+	{
+        "name": "TA Supervisor",
+        "children": [{
+            "name": "Manage work for DMC Agents",
+            "children": [{
+                "name": "Be informed of DMC Agent workload and status",
+                "size": 11
+            }, {
+                "name": "Assign/ redistribute enqiries for DMC Agents",
+                "size": 10
+            }, {
+                "name": "Approve price change request created by DMC agent",
+                "size": 10
+            }]
+        }, {
+            "name": "Reduce operational cost",
+            "children": [{
+                "name": "Reduce manual error by DMC agents (possibly by having some checks in place)",
+                "size": 10
+            },
+			{
+                "name": "Make DMC Agents more productive",
+                "size": 10
+            }]
+        }, {
+            "name": "Ensure targets are met",
+            "children": [{
+                "name": "Set targets for my agents",
+                "size": 10
+            }, {
+                "name": "Incentivise/ penalise DMC Agents",
+                "size": 10
+            }]
+        }, {
+            "name": "Communicate routine disruptions to relevant stakeholders",
+            "children": [{
+                "name": "Use the announcement system to make selective announcements",
+                "size": 10
+            }]
+        },
+		{
+            "name": "Define rules of engagement for DMCs",
+            "children": [{
+                "name": "Easily define rules for choosing DMCs for booking",
+                "size": 10,
+                "goodness": 1
+            }]
+        }]
+    }]
+}

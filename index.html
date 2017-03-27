@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
+<style type="text/css">
+  
+	.node {
+    cursor: pointer;
+  }
+	html,body{
+		padding:0;
+		margin:0;
+    overflow: hidden;
+    text-align: center;
+	}
+
+
+
+  .dashboard-strip{
+    width: calc(100%);
+    height: 135px;
+    display: flex;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    color: #ffffff;
+    padding: 30px;
+    font-family: 'Electrolize', sans-serif;
+    text-shadow: none;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .dashboard-strip--about, .dashboard-strip--title, .dashboard-strip--option{
+    width: calc(100% / 3);
+  }
+
+  
+
+  .dashboard-strip span.heading{
+     font-family: 'Electrolize', sans-serif;
+     text-shadow: none;
+     display: block;
+     font-size: 50px;
+  }
+
+  .dashboard-strip span.sub-heading{
+     font-family: 'Electrolize', sans-serif;
+     text-shadow: none;
+     display: block;
+     font-size: 30px;
+  }
+
+  .dashboard-strip p{
+    color: #777777;
+    font-size: 12px;
+    padding: 0px 70px;
+  }
+
+  
+  .dashboard-strip span.font-size-18{
+    font-size: 18px;
+  }
+
+
+
+  #tree-container{
+    text-align: center;
+  }
+
+  .overlay{
+     /*background-color:#000;*/
+     background-image: url("bg.jpg");
+     background-size: cover;
+  }
+   
+  .node circle {
+    fill: #434343;
+    stroke: transparent;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:12px; 
+    /*font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";*/
+    font-family: 'Electrolize', sans-serif;
+    fill: #00fcda; 
+  }
+   
+  .link {
+    fill: none;
+    stroke: gold;
+    stroke-width: 0.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+
+
+
+/* check box */
+
+  
+.checkbox-custom{
+    opacity: 0;
+    /* position: absolute;    */
+    position: absolute;
+    text-align: left;
+
+   /* max-width: 60px; */
+       max-width: calc(100% - 50px);
+
+}
+
+.checkbox-custom, .checkbox-custom-label {
+    
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  width: calc(100%);
+  padding: 10px;
+  text-align: left;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.checkbox-custom-label{
+   /*  position: relative;
+     text-align: left; */
+   
+    text-align: left;
+}
+
+.checkbox-custom + .checkbox-custom-label:before{
+    content: '';
+  background: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    content: "\f26b";
+   background: #428bca;
+    font-family: Material-Design-Iconic-Font;
+   color: #fff;
+    /*box-shadow: inset 0px 0px 0px 4px #fff; */
+}
+
+
+
+.checkbox-custom:focus + .checkbox-custom-label {
+  outline: none; /* focus style */
+}
+
+
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3tree.js"></script>
+<body>
+  <div class="dashboard-strip">
+    <div class="dashboard-strip--about">
+      <span class="sub-heading">Who? What? How?</span>
+      <p> 
+        This poster is a model that represents the people involved in the DMC quotation process, their key goals, and the tasks we feel they should be undertaking in an ideal system.
+      </p>
+    </div>
+    <div class="dashboard-strip--title">
+      <span class="heading">theBeats</span>
+      <span class="sub-heading">Who? What? How?</span>
+      <span class="sub-heading font-size-18">
+        A list of system users, their goals and tasks
+      </span>
+    </div>
+    <div class="dashboard-strip--option">
+      <input class="checkbox-custom" id="dashBoardView"  type="checkbox"  />
+      <label for="isDefenceSearch" class="checkbox-custom-label"> Dashboard</label>
+    </div>
+  </div>
+  <div id="tree-container" align="center"></div>
+
+
+</body>
+</html>
