@@ -40,7 +40,7 @@ $('#dashBoardView').change(function () {
 function changeDashboardOption(){
 
     $("#tree-container").html('');
-if(ckb){
+if(!ckb){
     // Calculate total nodes, max label length
     var totalNodes = 0;
     var maxLabelLength = 0;
@@ -637,7 +637,11 @@ var radialTree = d3.layout.tree()
 var radialDiagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
 
-
+var width = 500,
+    height = 500;
+      // size of the diagram
+    var viewerWidth = $(document).width();
+    var viewerHeight = $(document).height();
 
 
 function transitionToRadialTree() {
@@ -645,8 +649,8 @@ function transitionToRadialTree() {
       links = radialTree.links(nodes);
     
     svg.transition().duration(1500)
-       .attr("transform", "translate(" + (diameter/2)
-                 + "," + (diameter/2) + ")");
+       .attr("transform", "translate(" + (viewerWidth/3 - 120)
+                 + "," + (viewerHeight - 220) + ")");
              //set appropriate translation (origin in middle of svg)
     
     link.data(links, function(d){
@@ -657,11 +661,36 @@ function transitionToRadialTree() {
   node.data(nodes, function(d){
               return d.name ;})
       .transition().duration(1500)
-      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; }) 
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; });
+ 
+
+
+
+
+
+
+
+
 
   node.select("circle")
       .transition().duration(1500)
-      .attr("r", 10.5);
+      .attr("r", function(d){  
+                console.log(d.depth);
+var x = 5;
+                if(d.depth == 0)
+                    return 4*x;
+                else if(d.depth == 1)
+                    return 3*x;
+                else if(d.depth == 2)
+                    return 2*x;
+                else  if(d.depth == 3)
+                    return x;
+                else 
+                    return x/2;
+             });
+
+        root.x0 = viewerHeight / 2;
+    root.y0 = 0;
 
   node.select("text")
       .transition().duration(1500)
@@ -671,19 +700,19 @@ function transitionToRadialTree() {
 };
 
 
-var width = 500,
-    height = 500;
-      // size of the diagram
-    var viewerWidth = $(document).width();
-    var viewerHeight = $(document).height();
 
-var cluster = d3.layout.cluster()
-    .size([height, width - 160]);
+
+
+    var cluster = d3.layout.cluster()
+        .size([viewerHeight, viewerWidth]);
+
 
 var diagonal = d3.svg.diagonal()
     .projection(function (d) {
     return [d.y, d.x];
 });
+
+
 
 var svg = d3.select("#tree-container").append("svg")
     .attr("width", viewerWidth)
@@ -692,11 +721,14 @@ var svg = d3.select("#tree-container").append("svg")
     .append("g")
     .attr("transform", "translate(40,0)");
 
+
     
 
     root = treeData, //root is now global
         nodes = cluster.nodes(root),
         links = cluster.links(nodes);
+
+       
 
     var link = svg.selectAll(".link")
         .data(links)
@@ -712,13 +744,42 @@ var svg = d3.select("#tree-container").append("svg")
         .attr("class", "node")
         .attr("transform", function (d) {
         return "translate(" + d.y + "," + d.x + ")";
-    })
+    })  
+    .on("mouseover", function(d) {
+      var g = d3.select(this); // The node
+      // The class is used to remove the additional text later
+      var info = g.append('text')
+        .attr("class", "hover")
+        .attr('transform', function(d){ 
+            console.log(d.x);
+            console.log(d.y);
+            return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")rotate(" + (-d.x + 90) + ")";
+        })
+        .text(d.name);
+  })
+  .on("mouseout", function() {
+      // Remove the info text on mouse out.
+      d3.select(this).select('text.hover').remove();
+  });
 
 
 
           node.append("circle")
             .attr('class', 'nodeCircle')
-            .attr("r", 4.5)
+            .attr("r",  function(d){  
+                console.log(d.depth);
+var x = 5;
+                if(d.depth == 0)
+                    return 4*x;
+                else if(d.depth == 1)
+                    return 3*x;
+                else if(d.depth == 2)
+                    return 2*x;
+                else  if(d.depth == 3)
+                    return x;
+                else 
+                    return x/2;
+             })
             .style("fill", function(d) {
                  if(d.goodness == 1)
                     return "#00fcda";
@@ -730,7 +791,7 @@ var svg = d3.select("#tree-container").append("svg")
 
 
      node.append("circle")
-            .attr("r", 0)
+            .attr("r",  0)
             .style("stroke", function(d) {
                 if(d.goodness == 1)
                     return "#00fcda";

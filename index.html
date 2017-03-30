@@ -120,13 +120,14 @@
 
    /* max-width: 60px; */
        max-width: calc(100% - 50px);
+       cursor: pointer;
 
 }
 
 .checkbox-custom, .checkbox-custom-label {
     
-  background: #ffffff;
-  border: 1px solid #e2e2e2;
+  background: rgba(0,0,0,0.5);
+ 
   width: calc(100%);
   padding: 10px;
   text-align: left;
@@ -139,6 +140,8 @@
      text-align: left; */
    
     text-align: left;
+    color: gold;
+        vertical-align: bottom;
 }
 
 .checkbox-custom + .checkbox-custom-label:before{
@@ -154,10 +157,10 @@
 }
 
 .checkbox-custom:checked + .checkbox-custom-label:before {
-    content: "\f26b";
-   background: #428bca;
-    font-family: Material-Design-Iconic-Font;
-   color: #fff;
+   
+   background: gold;
+   border-radius: 50%;
+   
     /*box-shadow: inset 0px 0px 0px 4px #fff; */
 }
 
@@ -176,7 +179,7 @@
 <body>
   <div class="dashboard-strip">
     <div class="dashboard-strip--about">
-      <span class="sub-heading">Who? What? How?</span>
+      <span class="sub-heading">What's This?</span>
       <p> 
         This poster is a model that represents the people involved in the DMC quotation process, their key goals, and the tasks we feel they should be undertaking in an ideal system.
       </p>
@@ -189,7 +192,7 @@
       </span>
     </div>
     <div class="dashboard-strip--option">
-      <input class="checkbox-custom" id="dashBoardView"  type="checkbox"  />
+      <input class="checkbox-custom" id="dashBoardView"  type="checkbox" checked="checked" />
       <label for="isDefenceSearch" class="checkbox-custom-label"> Dashboard</label>
     </div>
   </div>
